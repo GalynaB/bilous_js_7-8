@@ -32,8 +32,9 @@ $(function () {
     $('.hint').hover(
         function () {
           $(this).next('.help').animate({opacity: 'show'}, 'fast');
-        }, function () {
-            $(this).next('.help').animate({opacity: 'hide'}, 'fast');
+        },
+        function () {
+          $(this).next('.help').animate({opacity: 'hide'}, 'fast');
         });
 
     $('#show-help').on('click', function () {
