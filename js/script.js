@@ -27,17 +27,37 @@ $(function () {
         $tabsContent.addClass('hide');
         $(content3).removeClass('hide');
       }
-    });
+  });
 
-    $('.hint').hover(
-        function () {
-          $(this).next('.help').animate({opacity: 'show'}, 'fast');
-        },
-        function () {
-          $(this).next('.help').animate({opacity: 'hide'}, 'fast');
-        });
+  $(function () {
 
-    $('#show-help').on('click', function () {
-        $('.help').animate({opacity: 'show'}, 'fast');
+    var $input = $('#name, #surname, #address');
+    var $help = $('#help-name, #help-surname, #help-address');
+
+    $input.mouseover(function(e) {
+
+      if ($(this).attr('id') === 'name') {
+
+        $help.addClass('hide');
+        $('#help-name').removeClass('hide');
+
+      } else if ($(this).attr('id') === 'surname') {
+
+          $help.addClass('hide');
+          $('#help-surname').removeClass('hide');
+
+      } else if ($(this).attr('id') === 'address') {
+
+          $help.addClass('hide');
+          $('#help-address').removeClass('hide');
+
+      }
     });
-  })
+  });
+
+  $('#show-help').click(function() {
+    $('#help-name').removeClass('hide');
+    $('#help-surname').removeClass('hide');
+    $('#help-address').removeClass('hide');
+  });
+});
